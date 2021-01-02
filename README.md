@@ -6,14 +6,14 @@ As inputs, the script requires an eBird database file, which can be obtained fro
 ## Usage
 To install the requirements for this script, run:
 
-    pip3 install requirements.txt
+    pip3 install .\
 To run the script:
 
-    python3 filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file'
+    python3 .\ebird_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file'
 
 To filter only unaccepted observations, add the -u flag to the command:
 
-    python3 filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -u
+    python3 .\ebird_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -u
 
  ## The Rules File
  This is a comma-separated value file that defines the criteria for filtering records. Each line contains four columns: species common name, start month, start day, end month, end day, and location. The first line of the file is the header line and is not parsed by the script, rules should start on the second line of the file.
