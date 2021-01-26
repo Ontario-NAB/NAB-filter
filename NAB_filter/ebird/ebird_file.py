@@ -1,9 +1,9 @@
-from ebird_filter.inaturalist.inat_line import iNatLine
 import csv
+from NAB_filter.ebird.ebird_line import eBirdLine
 
-class iNatFile:
+class eBirdFile:
     """
-    Small utility class to open and read an iNaturalist data file.
+    Small utility class to open and read an eBird data file.
     """
     def __init__(self, file_path):
         self.file_path = file_path
@@ -11,20 +11,17 @@ class iNatFile:
     
     def read_file(self):
         with open(self.file_path, encoding='utf8', errors='ignore') as f:
-            reader = csv.reader(f)
+            reader = csv.reader(f, delimiter='\t')
             # Skip the first line as these are the headers.
             next(reader)
             for line in reader:
-                yield iNatLine(line, self.headers)
+                yield eBirdLine(line, self.headers)
     
     def read_headers(self):
         with open(self.file_path, encoding='utf8', errors='ignore') as f:
-            reader = csv.reader(f)
+            reader = csv.reader(f, delimiter='\t')
             headers = next(reader)
         return headers
     
     def get_headers(self):
         return self.headers
-    
-    def get_out_headers(self):
-        return ['common_name', 'observed_on', 'latitude', 'longitude', 'place_county_name', 'url']

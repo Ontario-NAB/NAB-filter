@@ -11,28 +11,28 @@ To install this package, run:
 ## eBird Filter Usage
 To run the eBird script:
 
-    python3 .\ebird_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file'
+    python3 .\NAB_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file'
 
 To filter only unaccepted observations, add the -u flag to the command:
 
-    python3 .\ebird_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -u
+    python3 .\NAB_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -u
 
 To append the results to the outfile instead of overwriting it, add the -a flag to the command:
 
-    python3 .\ebird_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -a
+    python3 .\NAB_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -a
 
 ## iNaturalist Filter Usage
 To run the iNaturalist script:
 
-    python3 .\ebird_filter\filter_inaturalist.py -i 'path/to/iNat/database/file' -r 'path/to/rules/file' -o 'path/to/output/file'
+    python3 .\NAB_filter\filter_inaturalist.py -i 'path/to/iNat/database/file' -r 'path/to/rules/file' -o 'path/to/output/file'
 
 To write the entire raw line from the infile to the outfile instead of just a few filtered columns, add the -e flag to the command:
 
-    python3 .\ebird_filter\filter_inaturalist.py -i 'path/to/iNat/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -e
+    python3 .\NAB_filter\filter_inaturalist.py -i 'path/to/iNat/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -e
 
 To append the results to the outfile instead of overwriting it, add the -a flag to the command:
 
-    python3 .\ebird_filter\filter_inaturalist.py -i 'path/to/iNat/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -a
+    python3 .\NAB_filter\filter_inaturalist.py -i 'path/to/iNat/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -a
 
  ## The Rules File
  This is a comma-separated value file that defines the criteria for filtering records. Each line contains four columns: species common name, start month, start day, end month, end day, and location. The first line of the file is the header line and is not parsed by the script, rules should start on the second line of the file.

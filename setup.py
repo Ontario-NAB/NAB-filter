@@ -5,12 +5,12 @@ from setuptools import setup
 with open('requirements.txt') as f:
     required = f.read().splitlines()
 
-setup(name='ebird_filter',
+setup(name='NAB_filter',
       version='1.0',
-      packages=['ebird_filter',
-                'ebird_filter.ebird',
-                'ebird_filter.rules',
-                'ebird_filter.inaturalist',
+      packages=['NAB_filter',
+                'NAB_filter.ebird',
+                'NAB_filter.rules',
+                'NAB_filter.inaturalist',
                 ],
       install_requires=required,
      )
