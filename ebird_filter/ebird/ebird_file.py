@@ -1,5 +1,5 @@
 import csv
-from ebird_filter.ebird_file.ebird_line import eBirdLine
+from ebird_filter.ebird.ebird_line import eBirdLine
 
 class eBirdFile:
     """

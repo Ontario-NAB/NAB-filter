@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
 setup(name='ebird_filter',
       version='1.0',
       packages=['ebird_filter',
-                'ebird_filter.ebird_file',
+                'ebird_filter.ebird',
                 'ebird_filter.rules',
                 'ebird_filter.inaturalist',
                 ],

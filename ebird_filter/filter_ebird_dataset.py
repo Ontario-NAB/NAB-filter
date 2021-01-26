@@ -1,6 +1,6 @@
 import argparse
 import logging
-from ebird_filter.ebird_file.ebird_file import eBirdFile
+from ebird_filter.ebird.ebird_file import eBirdFile
 from ebird_filter.rules.rules import load_rules, check_obs
 
 
