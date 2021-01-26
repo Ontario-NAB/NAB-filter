@@ -1,19 +1,38 @@
-# eBird Dataset Filter
-This small Python script allows you to filter observations from the eBird dataset based on species common name, date, and location. It also allows filtering only unconfirmed records if you need to find a record that hasn't been reviewed or accepted.
+# NAB Dataset Filter
+This small Python package allows you to filter observations from both the eBird and iNaturalist datasets based on species common name, date, and location. It also allows filtering only unconfirmed records from eBird if you need to find a record that hasn't been reviewed or accepted.
 
-As inputs, the script requires an eBird database file, which can be obtained from eBird, a rules file, which is written by the user, and an output file to which the matching records from the eBird database file are written.
+As inputs, the scripts in the package require either an eBird or iNaturalist database file, which can be obtained from eBird or iNaturalist respectively, a rules file, which is written by the user, and an output file to which the matching records from the eBird/iNaturalist database file are written.
 
-## Usage
-To install the requirements for this script, run:
+## Installation
+To install this package, run:
 
     pip3 install .\
-To run the script:
+
+## eBird Filter Usage
+To run the eBird script:
 
     python3 .\ebird_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file'
 
 To filter only unaccepted observations, add the -u flag to the command:
 
     python3 .\ebird_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -u
+
+To append the results to the outfile instead of overwriting it, add the -a flag to the command:
+
+    python3 .\ebird_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -a
+
+## iNaturalist Filter Usage
+To run the iNaturalist script:
+
+    python3 .\ebird_filter\filter_inaturalist.py -i 'path/to/iNat/database/file' -r 'path/to/rules/file' -o 'path/to/output/file'
+
+To write the entire raw line from the infile to the outfile instead of just a few filtered columns, add the -e flag to the command:
+
+    python3 .\ebird_filter\filter_inaturalist.py -i 'path/to/iNat/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -e
+
+To append the results to the outfile instead of overwriting it, add the -a flag to the command:
+
+    python3 .\ebird_filter\filter_inaturalist.py -i 'path/to/iNat/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -a
 
  ## The Rules File
  This is a comma-separated value file that defines the criteria for filtering records. Each line contains four columns: species common name, start month, start day, end month, end day, and location. The first line of the file is the header line and is not parsed by the script, rules should start on the second line of the file.
@@ -44,5 +63,11 @@ Similarly, this next rule will match Common Gallinule anywhere between December 
 Finally, the below rule will match any Golden Eagle record from June to August inclusive that is reported within the defined polygon:
 
     Golden Eagle,6,,8,,"46.64729622613731, -84.49540784620643|46.496246353072785, -76.54130628370643|44.17996842330521, -69.81767347120643|41.17630767122074, -83.30888440870643"
+
+The same rules file can be used for both eBird and iNaturalist databases, however, note that there may be some discrepancies of common names between the two databases, so the rules file may need to be adjusted.
+
 ## Obtaining an eBird Database File
 To download all or a custom portion of the eBird database, follow the instructions here: [eBird database download](https://ebird.org/science/download-ebird-data-products) for downloading the eBird Basic Dataset (EBD). This requires an eBird account and justification for the download.
+
+## Obtaining an iNaturalist Database File
+To download a custom portion of the iNaturalist database (max 200,000 records at a time), follow the instructions here: [iNaturalist database download](https://www.inaturalist.org/observations/export). This requires an iNaturalist account. Please also check the box for "place_county_name" under the "Geo" section of part 3: "Choose Columns".

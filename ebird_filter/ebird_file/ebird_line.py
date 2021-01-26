@@ -5,10 +5,11 @@ class eBirdLine():
     """
     Utility class to get data from an eBird data file line.
     """
-    def __init__(self, raw_line, headers):
+    def __init__(self, line, headers):
         self.headers = headers
-        self.raw_line = raw_line
-        self.line_dict =  dict(zip(headers, raw_line.split('\t')))
+        self.line = line
+        self.raw_line = '{}\n'.format('\t'.join(line))
+        self.line_dict =  dict(zip(headers, line))
     
     def get_field(self, name):
         return self.line_dict[name]
@@ -30,7 +31,7 @@ class eBirdLine():
     
     def pretty_print(self):
         header_line = '\t'.join(self.headers)
-        return '\n'.join([header_line, raw_line])
+        return '\n'.join([header_line, self.get_raw_line()])
     
     def get_raw_line(self):
         return self.raw_line

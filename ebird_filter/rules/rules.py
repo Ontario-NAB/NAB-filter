@@ -1,4 +1,5 @@
 import calendar
+import csv
 from shapely.geometry.polygon import Polygon
 
 def compare_day(obs_date, start_month, start_day, end_month, end_day):
@@ -69,9 +70,9 @@ def load_rules(rules_file):
     """
     rule_dict = {}
     with open(rules_file) as f:
-        headers = f.readline().split(',')
-        for line in f:
-            line_vals = line.strip().split(',', 5)
+        reader = csv.reader(f)
+        headers = next(reader)
+        for line_vals in reader:
             coord_list = line_vals[5].strip('"').split('|') if line_vals[5] else None
             if coord_list:
                 coord_inputs = [tuple([float(x.split(",")[0]), float(x.split(",")[1].strip())]) for x in coord_list]

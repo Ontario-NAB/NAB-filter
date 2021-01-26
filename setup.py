@@ -10,6 +10,7 @@ setup(name='ebird_filter',
       packages=['ebird_filter',
                 'ebird_filter.ebird_file',
                 'ebird_filter.rules',
+                'ebird_filter.inaturalist',
                 ],
       install_requires=required,
      )
