@@ -9,7 +9,19 @@ To install this package, run:
     pip3 install .\
 
 ## eBird Filter Usage
-To run the eBird script:
+This script requires the path to an eBird database file, the path to a rules file, and the path to an output file. It optionally takes flags to include only unaccepted observations and to append to rather than overwrite the output file.
+
+-i, --infile: The path to the input eBird database file.
+
+-r, --rules: The path to the rules csv file.
+
+-o, --outfile: The path to the output file.
+
+-u, --unaccepted: (Optional) Include this flag to only filter unaccepted observations.
+
+-a, --append: (Optional) Include this flag to append records to the output file, rather than overwrite this file.
+
+To run the eBird script with basic functionality:
 
     python3 .\NAB_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file'
 
@@ -22,7 +34,19 @@ To append the results to the outfile instead of overwriting it, add the -a flag 
     python3 .\NAB_filter\filter_ebird_dataset.py -i 'path/to/eBird/database/file' -r 'path/to/rules/file' -o 'path/to/output/file' -a
 
 ## iNaturalist Filter Usage
-To run the iNaturalist script:
+This script requires the path to an iNaturalist database file, the path to a rules file, and the path to an output file. It optionally takes flags to include only unaccepted observations and to append to rather than overwrite the output file.
+
+-i, --infile: The path to the input iNaturalist database file.
+
+-r, --rules: The path to the rules csv file.
+
+-o, --outfile: The path to the output file.
+
+-e, --raw: (Optional) Include this flag to include the entire raw line from the iNaturalist database file. If this flag is not included, only the following columns will be output: common_name, observed_on, latitude, longitude, place_county_name, url.
+
+-a, --append: (Optional) Include this flag to append records to the output file, rather than overwrite this file.
+
+To run the iNaturalist script with basic functionality:
 
     python3 .\NAB_filter\filter_inaturalist.py -i 'path/to/iNat/database/file' -r 'path/to/rules/file' -o 'path/to/output/file'
 
