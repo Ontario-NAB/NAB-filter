@@ -16,6 +16,9 @@ def compare_day(obs_date, start_month, start_day, end_month, end_day):
     if not end_day and start_day:
         end_day = calendar.monthrange(obs_date.year, end_month)[1]
 
+    start_day = int(start_day)
+    end_day = int(end_day)
+
     if obs_month == start_month and obs_month == end_month:
         return obs_day >= start_day and obs_day <= end_day
     if obs_month == start_month:
