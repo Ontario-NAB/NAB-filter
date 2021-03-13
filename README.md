@@ -90,6 +90,8 @@ Finally, the below rule will match any Golden Eagle record from June to August i
 
 The same rules file can be used for both eBird and iNaturalist databases, however, note that there may be some discrepancies of common names between the two databases, so the rules file may need to be adjusted.
 
+An example rules file can be found in the "examples" folder.
+
 ## Obtaining an eBird Database File
 To download all or a custom portion of the eBird database, follow the instructions here: [eBird database download](https://ebird.org/science/download-ebird-data-products) for downloading the eBird Basic Dataset (EBD). This requires an eBird account and justification for the download.
 
