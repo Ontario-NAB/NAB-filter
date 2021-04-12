@@ -18,7 +18,7 @@ def find_notable_records(infile, rules_file, outfile, unaccepted, append):
     with open(outfile, mode, encoding='utf8', errors='ignore') as out:
         rule_dict = load_rules(rules_file)
         species_dict = {}
-        out.write('\t'.join(data_file.get_headers()))
+        out.write('{}\n'.format('\t'.join(data_file.get_headers())))
         current_species = ''
         for ebird_line in data_file.read_file():
             species_name = ebird_line.get_common_name()
