@@ -49,5 +49,5 @@ class iNatLine():
         return self.raw_line
     
     def get_filtered_line(self):
-        return [self.get_common_name(), self.get_field('observed_on'), self.get_field('latitude'), self.get_field('longitude'), self.get_county(), self.get_url()]
+        return [self.get_common_name(), self.get_field('observed_on'), self.get_field('latitude'), self.get_field('longitude'), self.get_county(), self.get_url(), self.get_field('taxon_id')]
         

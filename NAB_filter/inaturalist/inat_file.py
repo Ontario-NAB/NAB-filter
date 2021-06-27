@@ -27,4 +27,4 @@ class iNatFile:
         return self.headers
     
     def get_out_headers(self):
-        return ['common_name', 'observed_on', 'latitude', 'longitude', 'place_county_name', 'url']
+        return ['common_name', 'observed_on', 'latitude', 'longitude', 'place_county_name', 'url', 'taxon_id']
