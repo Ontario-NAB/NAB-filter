@@ -64,7 +64,7 @@ def find_notable_records(infile, rules_file, outfile, append, raw):
     except Exception as err:
         logging.error("Could not remove temp file due to: {}".format(err))
                 
-        logging.debug('Extracted the following species from dataset: {}'.format(list(dict.fromkeys(species_dict))))
+    logging.debug('Extracted the following species from dataset: {}'.format(list(dict.fromkeys(species_dict))))
 
 if __name__ == '__main__':
     logging.basicConfig(format='[%(asctime)s] %(levelname)s:%(message)s', level=logging.DEBUG)
