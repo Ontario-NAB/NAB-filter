@@ -26,6 +26,9 @@ class iNatLine():
     def get_common_name(self):
         return self.get_field('common_name')
     
+    def get_subspecies_name(self):
+        return ''
+    
     def get_county(self):
         try:
             return self.get_field('place_county_name')

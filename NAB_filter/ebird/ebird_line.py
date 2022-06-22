@@ -29,6 +29,9 @@ class eBirdLine():
     def get_unaccepted(self):
         return int(self.get_field('APPROVED'))
     
+    def get_subspecies_name(self):
+        return self.get_field('SUBSPECIES COMMON NAME')
+    
     def pretty_print(self):
         header_line = '\t'.join(self.headers)
         return '\n'.join([header_line, self.get_raw_line()])

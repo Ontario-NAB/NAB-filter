@@ -64,7 +64,11 @@ def check_obs(ebird_line, rule_dict):
     Returns True if the observation in ebird_line matches at least one of the loaded rules, False otherwise.
     """
     common_name = ebird_line.get_common_name().strip().lower()
-    return common_name in rule_dict and any([check_rule(ebird_line, rule) for rule in rule_dict[common_name]])
+    subspecies_name = ebird_line.get_subspecies_name().strip().lower()
+    if subspecies_name:
+        return subspecies_name in rule_dict and any([check_rule(ebird_line, rule) for rule in rule_dict[subspecies_name]])
+    else:
+        return common_name in rule_dict and any([check_rule(ebird_line, rule) for rule in rule_dict[common_name]])
 
 def load_rules(rules_file):
     """
