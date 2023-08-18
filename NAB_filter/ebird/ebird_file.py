@@ -11,7 +11,7 @@ class eBirdFile:
     
     def read_file(self):
         with open(self.file_path, encoding='utf8', errors='ignore') as f:
-            reader = csv.reader(f, delimiter='\t')
+            reader = csv.reader(f, delimiter='\t', quoting=csv.QUOTE_NONE)
             # Skip the first line as these are the headers.
             next(reader)
             for line in reader:
